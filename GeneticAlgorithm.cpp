@@ -11,16 +11,9 @@ float GeneticAlgorithm::crossover_rate = 0.70f;
 float GeneticAlgorithm::mutation_rate = 1.0f;
 
 GeneticAlgorithm::GeneticAlgorithm(const char* target_, Population* population_) : target(target_), population(population_) {
-
 }
-
 
 GeneticAlgorithm::~GeneticAlgorithm() {
-}
-
-bool compare(const Individual* l, const Individual* r) //(2)
-{
-	return r->fitness < l->fitness;
 }
 
 void GeneticAlgorithm::simulate() {
@@ -29,7 +22,7 @@ void GeneticAlgorithm::simulate() {
 int generation = 0;
 	Individual* head = population->getHead();
 	while(head->fitness < Individual::gene_length) {
-		std::sort(population->individuals.begin(), population->individuals.end(), compare);
+		std::sort(population->individuals.begin(), population->individuals.end(), Individual::compare);
 		head = population->getHead();
 
 		std::cout << "Generation: " << generation;

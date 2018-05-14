@@ -21,6 +21,8 @@ public:
 	bool operator<(const  Individual & other) {
 		return fitness < other.fitness;
 	}
+
+	static bool compare(const Individual* l, const Individual* r);
 };
 
 #endif // !INDIVIDUAL_H

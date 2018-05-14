@@ -31,3 +31,8 @@ std::string Individual::toString() {
 	}
 	return test;
 }
+
+
+bool Individual::compare(const Individual* l, const Individual* r) {
+	return r->fitness < l->fitness;
+}
